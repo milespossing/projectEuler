@@ -1,6 +1,5 @@
-from PanDigitalOperator import PanDigitalOperator
-from NumberOperations import Dig2Num
-from sympy import isprime
+from MathPackage.PanDigitalOperator import PanDigitalOperator
+from MathPackage.NumberOperations import Dig2Num
 
 op = PanDigitalOperator(10)
 

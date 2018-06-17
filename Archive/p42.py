@@ -2,7 +2,7 @@
 
 from __future__ import division
 import string
-from StringOperations import Str2CharArr, LetterSum
+from MathPackage.StringOperations import Str2CharArr, LetterSum
 
 
 def tri(length):

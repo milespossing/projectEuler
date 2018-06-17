@@ -1,5 +1,5 @@
 from numpy import log10,ceil
-from NumberOperations import hasDuplicates, panDigital
+from MathPackage.NumberOperations import hasDuplicates, panDigital
 
 def makeNumber(num):
     output = num

@@ -1,5 +1,5 @@
 from sympy import isprime
-from NumberOperations import Num2Dig
+from MathPackage.NumberOperations import Num2Dig
 
 master = [9, 8, 7, 6, 5, 4, 3, 2, 1]
 

@@ -1,7 +1,5 @@
 from __future__ import division
-from NumberOperations import *
-import ListOperations
-
+from MathPackage.NumberOperations import *
 
 
 def digitCanceled(a1,a2,n1,n2):

@@ -1,5 +1,4 @@
-from sympy import prime
-from PanDigitalOperator import PanDigitalOperator
+from MathPackage.PanDigitalOperator import PanDigitalOperator
 
 o = PanDigitalOperator(4)
 

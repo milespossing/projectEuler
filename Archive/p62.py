@@ -1,6 +1,5 @@
 from numpy import log
-from ListOperations import permute
-from NumberOperations import Num2Dig, Dig2Num
+from MathPackage.NumberOperations import Num2Dig, Dig2Num
 import collections
 import datetime
 
