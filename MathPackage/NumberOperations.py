@@ -54,3 +54,11 @@ def hasDuplicates(num):
         if current in arr[i + 1:]:
             return True
     return False
+
+def isPermutation(numA, numB):
+    arrA = Num2Dig(numA)
+    arrB = Num2Dig(numB)
+    for a in arrA:
+        if arrB.count(a) != arrA.count(a):
+            return False
+    return True
