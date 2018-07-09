@@ -1,5 +1,6 @@
 from __future__ import division
-from numpy import sqrt
+import numpy
+from collections import Counter
 
 def Dec2Frac(val):
     val = val % 1
@@ -38,13 +39,11 @@ def Factor(num):
 
 def panDigital(num):
     arr = Num2Dig(num)
-    for i in range(1,len(arr) + 1):
-        count = 0
-        for a in arr:
-            if i == a:
-                count += 1
-        if count != 1:
-            return False
+    return panArray(arr)
+
+def panArray(arr):
+    c = Counter(arr)
+    if c.most_common()[0][1] > 1: return False
     return True
 
 def hasDuplicates(num):
@@ -62,3 +61,44 @@ def isPermutation(numA, numB):
         if arrB.count(a) != arrA.count(a):
             return False
     return True
+
+def isPalindrome(num):
+    numA = Num2Dig(num)
+    i = 0
+    j = len(numA) - 1
+    while i < j:
+        if numA[i] != numA[j]: return False
+        i += 1
+        j -= 1
+    return True
+
+def reverse(num):
+    numA = Num2Dig(num)
+    output = []
+    for i in reversed(numA):
+        output.append(i)
+    return Dig2Num(output)
+
+def combiner(left,right):
+    rDigs = numpy.floor(numpy.log10(right)) + 1
+    left *= 10 ** rDigs
+    return int(left + right)
+
+class fibonacci:
+
+    def __init__(self):
+        self.current = 1
+        self.last = 1
+        self.arr = []
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if len(self.arr) < 2:
+            self.arr.append(1)
+            return 1
+        else:
+            val = self.arr[-1] + self.arr[-2]
+            self.arr.append(val)
+            return val
