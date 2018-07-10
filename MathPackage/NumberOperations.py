@@ -85,7 +85,6 @@ def combiner(left,right):
     return int(left + right)
 
 class fibonacci:
-
     def __init__(self):
         self.current = 1
         self.last = 1
