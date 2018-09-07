@@ -31,7 +31,10 @@ def Dig2Num(dig):
     return output
 
 def DigCount(num):
-    return numpy.floor(numpy.log10(numpy.uint64(num))) + 1
+    return numpy.floor(numpy.log10(num)) + 1
+
+def DigCountLong(num):
+    return len([d for d in str(num)])
 
 def IndexOf(array, val):
     for i in range(0,len(array)):
