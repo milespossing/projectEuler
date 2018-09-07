@@ -1,19 +1,24 @@
 from __future__ import division
 import numpy
 from collections import Counter
+from fractions import Fraction
 
 def Dec2Frac(val):
-    val = val % 1
-    num = 1
-    den = 2
-    current = num / den
-    while current != val:
-        if current > val:
-            den += 1
-        elif current < val:
-            num += 1
-        current = num / den
-    return [num,den]
+    return val.as_integer_ratio()
+    # whole = val // 1
+    # val = val % 1
+    # if val == 0:
+    #     return [whole,1]
+    # num = 1
+    # den = 2
+    # current = num / den
+    # while abs(current - val) > .00000000000000001:
+    #     if current > val:
+    #         den += 1
+    #     elif current < val:
+    #         num += 1
+    #     current = num / den
+    # return [whole * den + num,den]
 
 def Num2Dig(val):
     return [int(d) for d in str(val)]
@@ -24,6 +29,9 @@ def Dig2Num(dig):
     for i in range(0,length):
         output += dig[-i -1] * (10 ** i)
     return output
+
+def DigCount(num):
+    return numpy.floor(numpy.log10(numpy.uint64(num))) + 1
 
 def IndexOf(array, val):
     for i in range(0,len(array)):

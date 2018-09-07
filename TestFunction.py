@@ -1,8 +1,10 @@
 from MathPackage.PanDigitalOperator import PanDigitalOperator
+import matplotlib.pyplot as plt
 
-o = PanDigitalOperator(4)
 
-def printer(v):
-    print(v)
+x = []
+y = []
+for i in range(0,10):
+    x.append(i)
+    y.append(i ** 2)
 
-o.iterate(printer)
