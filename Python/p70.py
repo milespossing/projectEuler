@@ -1,7 +1,7 @@
 from __future__ import division
 from sympy import primefactors, isprime
-from MathPackage.NumberOperations import isPermutation
-from Timer import timer
+from .MathPackage.NumberOperations import isPermutation
+from .Timer import timer
 
 def phi(n):
     out = 1
@@ -21,6 +21,6 @@ def __init__():
                 minRatio = i/p
                 n = i
         print(i)
-    print "n: ", n
-    print "phi(n): ", phi(n)
-    print "ratio: ", minRatio
+    print("n: ", n)
+    print("phi(n): ", phi(n))
+    print("ratio: ", minRatio)
