@@ -1,13 +1,6 @@
 from abc import abstractmethod
-from MathPackage.NumberOperations import Num2Dig
+from .MathPackage.NumberOperations import Num2Dig
 
-class entryType:
-    Triangle = 3
-    Square = 4
-    Pentagon = 5
-    Hexagon = 6
-    Septagon = 7
-    Octogon = 8
 
 class entry:
     def __init__(self, n, fig):
@@ -82,5 +75,4 @@ def test(left,right):
         left.possible.append(right)
 
 if __name__ == "__main__":
-    def function(x):
-        return function2(y):
+
