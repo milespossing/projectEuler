@@ -18,16 +18,17 @@ def test(test,check):
     return True
 
 
+if __name__ == "__main__":
+    f = open("files\\p79.txt")
+    lines = f.readlines()
+    f.close()
+    checks = []
+    for line in lines:
+        checks.append(int(line.replace("\n","")))
 
-f = file("files\\p79.txt")
-lines = f.readlines()
-f.close()
-checks = []
-for line in lines:
-    checks.append(int(line.replace("\n","")))
-
-testNum = 111
-while not works(testNum):
-    testNum += 1
-print testNum
+    testNum = 111
+    while not works(testNum):
+        testNum += 1
+        print(testNum)
+    print(testNum)
 

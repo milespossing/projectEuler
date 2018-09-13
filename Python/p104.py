@@ -7,25 +7,27 @@ def first10(numA):
 def last10(numA):
     return numA[-10:]
 
-i = 2
-last = 1
-current = 1
 
-good = False
-test = False
+if __name__ == "__main__":
+    i = 2
+    last = 1
+    current = 1
 
-while not good:
-    new = current + last
-    last = current
-    current = new
-    i += 1
-    if not test and log10(current) > 10:
-        test = True
-    if test:
-        numA = Num2Dig(current)
-        good = panArray(first10(numA)) or panArray(last10(numA))
-        print current
+    good = False
+    test = False
 
-print("Done")
-print current
-print i
+    while not good:
+        new = current + last
+        last = current
+        current = new
+        i += 1
+        if not test and log10(current) > 10:
+            test = True
+        if test:
+            numA = Num2Dig(current)
+            good = panArray(first10(numA)) or panArray(last10(numA))
+            print(current)
+
+    print("Done")
+    print(current)
+    print(i)

@@ -6,10 +6,10 @@ Firstly, if you solve problems on Project Euler and are here for answers, this h
 
 ## Currently working on
 
-61
+Deciding what to do next.
 
 ## Completed
 
 ![User Emblem](https://projecteuler.net/profile/milespossing.png)
 
-1-60, 62, 63, 67-69, 81-83, 85, 89
+1-63, 67-69, 81-83, 85, 89
