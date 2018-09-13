@@ -6,10 +6,10 @@ Firstly, if you solve problems on Project Euler and are here for answers, this h
 
 ## Currently working on
 
-Deciding what to do next.
+p84. I like the idea of monopoly odds, and I have some interesting ideas to solve it!
 
 ## Completed
 
 ![User Emblem](https://projecteuler.net/profile/milespossing.png)
 
-1-63, 67-69, 81-83, 85, 89
+1-63, 67-69, 74, 81-83, 85, 89
