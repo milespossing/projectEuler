@@ -10,6 +10,6 @@ p84. I like the idea of monopoly odds, and I have some interesting ideas to solv
 
 ## Completed
 
-![User Emblem](https://projecteuler.net/profile/milespossing.png)
+![User Emblem](http://projecteuler.net/profile/milespossing.png)
 
 1-63, 67-69, 74, 81-83, 85, 89
