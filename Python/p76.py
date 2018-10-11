@@ -1,24 +1,35 @@
 from math import floor
 
-def alpha(a,n):
-    i = 1
-    output = 0
-    while i * a < n:
-        output += count(n - i * 1)
-    for i in range(1,m + 1): #include m
-        output += count(n - i * a)
-    return output
+class Writer:
+    def __init__(self):
+        self.tab = 0
 
-n_vals = {}
+    def print(self, string):
+        for i in range(0, self.tab): print("\t", end="", flush=True)
+        print(string)
 
-def count(n):
-    if n in n_vals: return n_vals[n]
+def c(m, n, writer, base=False):
+    origin = n
+    writer.print("c(" + str(m) + "," + str(n)+")")
+    writer.tab += 1
     output = 1
-    for i in range(2,n):
-        output += alpha(i,n)
-    n_vals[n] = output
+    if n == m:
+        output += 1
+    if n > m:
+        n = m
+    if m == 0:
+        writer.print("m=0")
+        writer.tab -= 1
+        return 0
+    upper = m
+    for i in range(2,upper):
+        if m - i == 1:
+            continue
+        output += c(m - i, i, writer)
+    writer.print("c("+str(m)+","+str(origin)+")="+str(output))
+    writer.tab -= 1
     return output
 
 if __name__ == '__main__':
-    print(alpha(4,6))
-    print(count(6))
+    writer = Writer()
+    c(8, 8, writer)
