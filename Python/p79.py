@@ -43,7 +43,7 @@ def build(rules):
 
 
 if __name__ == "__main__":
-    f = open("files\\p79.txt")
+    f = open("files/p79.txt")
     lines = f.readlines()
     f.close()
     checks = []
