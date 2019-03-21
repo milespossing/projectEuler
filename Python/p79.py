@@ -1,21 +1,45 @@
-from MathPackage.NumberOperations import Num2Dig
 
-def works(n):
-    a = Num2Dig(n)
-    for c in checks:
-        if not test(a,Num2Dig(c)):
-            return False
-    return True
+class Code:
+    def __init__(self):
+        self.rules = set()
+        self.code = []
 
-def test(test,check):
-    c = 0
-    for ch in check:
-        while c < len(test):
-            if ch == test[c]:
-                break
-            c += 1
-        if c == len(test): return False
-    return True
+    def addRule(self,rule):
+        rules.append(rule)
+        if len(self.code) == 0:
+            self.code = rule.nums
+        else:
+            current = 0
+            for num in rule.nums:
+                if num in self.code[current:]:
+                    current = self.code.index(num)
+                else:
+                    rules.insert(1,num)
+                    current = 0
+
+    def __repr__(self):
+        return str(self.code)
+
+class Rule:
+    def __init__(self, nums=None):
+        if nums is None:
+            nums = []
+        self.nums = nums
+
+    def evaluate(self, code):
+        current = 0
+        for num in code:
+            if num == self.nums[current]: current += 1
+        if current < len(self.nums): return False
+        return True
+
+
+def build(rules):
+    code = Code()
+    for rule in rules:
+        code.addRule(rule)
+    return code
+
 
 
 if __name__ == "__main__":
@@ -23,12 +47,12 @@ if __name__ == "__main__":
     lines = f.readlines()
     f.close()
     checks = []
+    rules = []
     for line in lines:
-        checks.append(int(line.replace("\n","")))
-
-    testNum = 111
-    while not works(testNum):
-        testNum += 1
-        print(testNum)
-    print(testNum)
-
+        current = line.replace("\n","")
+        arr = []
+        for c in current:
+            arr.append(int(c))
+        rules.append(Rule(arr))
+    code = build(rules)
+    print("done")
