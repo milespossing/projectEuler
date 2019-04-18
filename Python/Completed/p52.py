@@ -1,7 +1,7 @@
 from MathPackage.NumberOperations import isPermutation
+from Timer import timer
 
-good = False
-current = 1
+
 
 def works(num):
     for i in range(2,7):
@@ -9,11 +9,17 @@ def works(num):
             return False
     return True
 
-while not good:
-    current += 1
-    if works(current):
-        good = True
+@timer
+def main():
+    good = False
+    current = 1
+    while not good:
+        current += 1
+        if works(current):
+            good = True
+    print(current)
 
-print(current)
+if __name__ == '__main__':
+    main()
 
 # Answer: 142857

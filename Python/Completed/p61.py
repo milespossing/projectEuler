@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from MathPackage.NumberOperations import Num2Dig
+from MathPackage.NumberOperations import num2Dig
 
 
 class entry:
@@ -51,8 +51,8 @@ class Figurate:
                 self.values.remove(value)
 
     def test(self, left, right):
-        lDigs = Num2Dig(left.value)
-        rDigs = Num2Dig(right.value)
+        lDigs = num2Dig(left.value)
+        rDigs = num2Dig(right.value)
         if lDigs[-2] == rDigs[0] and lDigs[-1] == rDigs[1]:
             left.possible.append(right)
 

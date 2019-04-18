@@ -1,9 +1,11 @@
 from GeneralPackage.ListOperations import Copy2d
 import numpy as np
 from PathFinding import Grid
+from Timer import timer
 
-if __name__ == '__main__':
-    f = open("files/p082.txt")
+@timer
+def main():
+    f = open("../files/p081.txt")
 
     rows = [row.split(",") for row in f]
     for row in rows:
@@ -14,6 +16,9 @@ if __name__ == '__main__':
     g = Grid(rows)
     g.solve()
     print(g.nodes[0][0].optimal)
+
+if __name__ == '__main__':
+    main()
 
 # 82: 260324
 # 83: 425185

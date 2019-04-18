@@ -1,17 +1,17 @@
-from MathPackage.NumberOperations import Num2Dig
+from MathPackage.NumberOperations import num2Dig
 
 reducers = set()
 
 def chain(n):
     output = []
-    digs = Num2Dig(n)
+    digs = num2Dig(n)
     current = sum([dig ** 2 for dig in digs])
     while (not output.__contains__(current)):
         if current in reducers:
             output.append(89)
             return output
         output.append(current)
-        digs = Num2Dig(current)
+        digs = num2Dig(current)
         current = sum([dig ** 2 for dig in digs])
     return output
 

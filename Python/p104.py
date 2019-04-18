@@ -1,5 +1,5 @@
 from numpy import log10
-from MathPackage.NumberOperations import Num2Dig, panArray
+from MathPackage.NumberOperations import num2Dig, panArray
 
 def first10(numA):
     return numA[:10]
@@ -24,7 +24,7 @@ if __name__ == "__main__":
         if not test and log10(current) > 10:
             test = True
         if test:
-            numA = Num2Dig(current)
+            numA = num2Dig(current)
             good = panArray(first10(numA)) or panArray(last10(numA))
             print(current)
 

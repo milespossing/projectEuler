@@ -30,8 +30,13 @@ class Rule:
         current = 0
         for num in code:
             if num == self.nums[current]: current += 1
-        if current < len(self.nums): return False
-        return True
+            if current == len(self.nums): return False
+        return False
+
+def check(code,rules):
+    for rule in rules:
+        if not rule.evaluate(code): return False
+    return True
 
 
 def build(rules):
@@ -54,5 +59,17 @@ if __name__ == "__main__":
         for c in current:
             arr.append(int(c))
         rules.append(Rule(arr))
-    code = build(rules)
+    code = []
+    for r in rules:
+        for val in r.nums:
+            code.append(val)
+
+    for i in range(len(code)):
+        for j in range(i):
+            if code[j] == code[i]:
+                copy = code[:]
+                copy.pop(j)
+                if check(copy,rules):
+                    code = copy
+                    i = 0
     print("done")

@@ -1,11 +1,11 @@
-from MathPackage.NumberOperations import Num2Dig
+from MathPackage.NumberOperations import num2Dig
 import numpy as np
 import math
 
 loops = {}
 
 def digFactorial(n):
-    digs = Num2Dig(n)
+    digs = num2Dig(n)
     return sum([math.factorial(dig) for dig in digs])
 
 def chainer(n):

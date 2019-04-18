@@ -1,7 +1,8 @@
-import Timer
+from Timer import timer
 
+@timer
 def Solution():
-    f = open("files/p081.txt")
+    f = open("../files/p081.txt")
     rows = [row.split(",") for row in f]
     for row in rows:
         for i in range(0, len(row)):
@@ -36,6 +37,6 @@ def Solution():
     print(rows[0][0])
 
 if __name__ == "__main__":
-    Timer.timer(Solution)
+    Solution()
 
 # Answer: 427337 (computed in linear time, 17ms)

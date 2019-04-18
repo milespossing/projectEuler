@@ -1,10 +1,10 @@
 from sympy import isprime
-from MathPackage.NumberOperations import Num2Dig
+from MathPackage.NumberOperations import num2Dig
 
 master = [9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 def panDigital(num):
-    arr = Num2Dig(num)
+    arr = num2Dig(num)
     for i in range(1,len(arr) + 1):
         count = 0
         for a in arr:

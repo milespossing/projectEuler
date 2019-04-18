@@ -8,6 +8,20 @@ class Writer:
         for i in range(0, self.tab): print("\t", end="", flush=True)
         print(string)
 
+def f(m,n,s=""):
+    if m < 0:
+        return 0
+    if n == 1:
+        print(s + "11")
+        return 1
+    cs = s
+    output = 0
+    for i in range(1,n):
+        cs = s + f"{str(i)} + "
+        output += f(m-i,i,cs)
+    print(f"Done with {str(m)}")
+    return output
+
 def c(m, n, writer, base=False):
     origin = n
     writer.print("c(" + str(m) + "," + str(n)+")")
@@ -32,4 +46,4 @@ def c(m, n, writer, base=False):
 
 if __name__ == '__main__':
     writer = Writer()
-    c(8, 8, writer)
+    print(f(5,5))

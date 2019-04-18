@@ -23,8 +23,8 @@ for den in range(10,100):
     for num in range(10,den):
         numF = Factor(num)
         denF = Factor(den)
-        a1 = Num2Dig(num)
-        a2 = Num2Dig(den)
+        a1 = num2Dig(num)
+        a2 = num2Dig(den)
 
         [numS, denS] = Dec2Frac(num / den)
         i = 1

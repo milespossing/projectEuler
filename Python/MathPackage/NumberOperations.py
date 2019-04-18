@@ -20,7 +20,7 @@ def Dec2Frac(val):
     #     current = num / den
     # return [whole * den + num,den]
 
-def Num2Dig(val):
+def num2Dig(val):
     return [int(d) for d in str(val)]
 
 def Dig2Num(dig):
@@ -49,7 +49,7 @@ def Factor(num):
     return output
 
 def panDigital(num):
-    arr = Num2Dig(num)
+    arr = num2Dig(num)
     return panArray(arr)
 
 def panArray(arr):
@@ -58,7 +58,7 @@ def panArray(arr):
     return True
 
 def hasDuplicates(num):
-    arr = Num2Dig(num)
+    arr = num2Dig(num)
     for i in range(0,len(arr)):
         current = arr[i]
         if current in arr[i + 1:]:
@@ -66,15 +66,15 @@ def hasDuplicates(num):
     return False
 
 def isPermutation(numA, numB):
-    arrA = Num2Dig(numA)
-    arrB = Num2Dig(numB)
-    for a in arrA:
-        if arrB.count(a) != arrA.count(a):
-            return False
-    return True
+    arrA = num2Dig(numA)
+    arrB = num2Dig(numB)
+    if len(arrA) != len(arrB): return False
+    arrA.sort()
+    arrB.sort()
+    return arrA == arrB
 
 def isPalindrome(num):
-    numA = Num2Dig(num)
+    numA = num2Dig(num)
     i = 0
     j = len(numA) - 1
     while i < j:
@@ -84,7 +84,7 @@ def isPalindrome(num):
     return True
 
 def reverse(num):
-    numA = Num2Dig(num)
+    numA = num2Dig(num)
     output = []
     for i in reversed(numA):
         output.append(i)

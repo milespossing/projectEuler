@@ -1,10 +1,8 @@
-from MathPackage.PanDigitalOperator import PanDigitalOperator
-import matplotlib.pyplot as plt
+from MathPackage.NumberOperations import isPermutation
 
+if __name__ == '__main__':
 
-x = []
-y = []
-for i in range(0,10):
-    x.append(i)
-    y.append(i ** 2)
+    a = 1234
+    b = 3241
 
+    print(isPermutation(a,b))

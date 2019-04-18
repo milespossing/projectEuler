@@ -1,5 +1,5 @@
 from numpy import log
-from MathPackage.NumberOperations import Num2Dig, Dig2Num
+from MathPackage.NumberOperations import num2Dig, Dig2Num
 import collections
 import datetime
 
@@ -21,7 +21,7 @@ while notYet:
     #gather all cubes in this base
     print("Base: " + str(currentMax))
     while cube < currentMax:
-        currentList.append(Num2Dig(cube))
+        currentList.append(num2Dig(cube))
         current += 1
         cube = current ** 3
     for i in range(0, len(currentList) - 3):

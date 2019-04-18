@@ -1,11 +1,11 @@
-from MathPackage.NumberOperations import Num2Dig
+from MathPackage.NumberOperations import num2Dig
 
 output = 0
 
 for i in range(1,100):
     for j in range(1,100):
         num = i ** j
-        numA = Num2Dig(num)
+        numA = num2Dig(num)
         numS = sum(numA)
         if numS > output: output = numS
 

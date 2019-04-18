@@ -1,11 +1,11 @@
 from sympy import primerange, isprime
-from MathPackage.NumberOperations import Num2Dig, Dig2Num
+from MathPackage.NumberOperations import num2Dig, Dig2Num
 from itertools import combinations
 
 def replace(num):
     print(num)
     places = 1
-    numA = Num2Dig(num)
+    numA = num2Dig(num)
     possiblePlaces = range(0, len(numA) - 1)
     while places < len(numA):
         check = recurse(numA,places,possiblePlaces)
