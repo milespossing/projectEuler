@@ -45,3 +45,5 @@ venv3/
 [Ll]ib/
 
 Python/files/
+__pycache__/
+cmake-build-debug/

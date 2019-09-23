@@ -1,75 +1,48 @@
+from collections import defaultdict
 
-class Code:
-    def __init__(self):
-        self.rules = set()
-        self.code = []
-
-    def addRule(self,rule):
-        rules.append(rule)
-        if len(self.code) == 0:
-            self.code = rule.nums
-        else:
-            current = 0
-            for num in rule.nums:
-                if num in self.code[current:]:
-                    current = self.code.index(num)
-                else:
-                    rules.insert(1,num)
-                    current = 0
-
-    def __repr__(self):
-        return str(self.code)
-
-class Rule:
-    def __init__(self, nums=None):
-        if nums is None:
-            nums = []
-        self.nums = nums
-
-    def evaluate(self, code):
-        current = 0
-        for num in code:
-            if num == self.nums[current]: current += 1
-            if current == len(self.nums): return False
-        return False
-
-def check(code,rules):
-    for rule in rules:
-        if not rule.evaluate(code): return False
-    return True
+from Timer import timer
 
 
-def build(rules):
-    code = Code()
-    for rule in rules:
-        code.addRule(rule)
-    return code
+def get_attempts(path):
+    f = open(path)
+    output = []
+    for line in f:
+        data = line.replace("\n","")
+        current = [int(c) for c in data]
+        output.append(current)
+    return output
+
+def get_connection(attempt):
+    l = len(attempt)
+    for i in range(l - 1):
+        for j in range(i + 1, l):
+            yield attempt[i], attempt[j]
+
+def make_number_graph(keylog):
+    graph = defaultdict(set)
+    for attempt in keylog:
+        for a, b in get_connection(attempt):
+            graph[a].add(b)
+    return graph
 
 
+def find_number_universe(keylog):
+    numbers = set()
+    for attempt in keylog:
+        for num in attempt:
+            numbers.add(num)
+    return numbers
 
-if __name__ == "__main__":
-    f = open("files/p79.txt")
-    lines = f.readlines()
-    f.close()
-    checks = []
-    rules = []
-    for line in lines:
-        current = line.replace("\n","")
-        arr = []
-        for c in current:
-            arr.append(int(c))
-        rules.append(Rule(arr))
-    code = []
-    for r in rules:
-        for val in r.nums:
-            code.append(val)
+@timer
+def p79():
+    attempts = get_attempts("files/p79.txt")
+    universe = find_number_universe(attempts)
+    graph = make_number_graph(attempts)
+    print(universe)
+    print(graph)
+    output = []
+    while len(graph) > 0:
 
-    for i in range(len(code)):
-        for j in range(i):
-            if code[j] == code[i]:
-                copy = code[:]
-                copy.pop(j)
-                if check(copy,rules):
-                    code = copy
-                    i = 0
-    print("done")
+
+if __name__ == '__main__':
+    p79()
