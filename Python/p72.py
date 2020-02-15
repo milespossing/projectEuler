@@ -1,12 +1,15 @@
-from sympy import primerange, isprime, primefactors
+from sympy import primerange, isprime, primefactors, sieve
 from numpy import gcd
 
 if __name__ == "__main__":
     n = 1000000
     output = 0
+    sieve.extend(1000000)
     for i in range (2,n + 1):
         for j in range(1,i):
-            if gcd(i,j) == 1:
+            if (i in sieve or j in sieve):
+                output += 1
+            elif gcd(i,j) == 1:
                 output += 1
         print(i)
     print("output: " + str(output))
