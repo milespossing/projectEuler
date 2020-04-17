@@ -7,6 +7,6 @@ open System
 module program=
     [<EntryPoint>]
     let main argv =
-        let a = Problems.p02.solve()
+        let a = Problems.p03.solve(600851475143L)
         printfn "%i" a
         0 // return an integer exit code
