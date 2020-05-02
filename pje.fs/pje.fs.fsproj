@@ -5,9 +5,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="NumberTheory.fs" />
+    <Compile Include="NumberOperations.fs" />
     <Compile Include="p01.fs" />
     <Compile Include="p02.fs" />
     <Compile Include="p03.fs" />
+    <Compile Include="p04.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>

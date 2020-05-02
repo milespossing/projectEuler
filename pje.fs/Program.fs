@@ -3,10 +3,12 @@
 namespace pje
 
 open System
+open Utilities
+open pje.fs
 
 module program=
     [<EntryPoint>]
     let main argv =
-        let a = Problems.p03.solve(600851475143L)
+        let a = p04.solve
         printfn "%i" a
         0 // return an integer exit code
