@@ -1,0 +1,16 @@
+{
+    "Languages": [
+        {
+            "Name": "Rust",
+            "Exe": "cargo",
+            "Params": ["run", "--"],
+            "WorkDir": "../rust"
+        },
+        {
+            "Name": "Python",
+            "Exe": "./venv/bin/python3",
+            "Params": ["main.py"],
+            "WorkDir": "../Python"
+        }
+    ]
+}

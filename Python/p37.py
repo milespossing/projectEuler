@@ -42,4 +42,4 @@ for i in primerange(20,9999999):
 
 print(primes)
 
-print sum(primes)
+print(sum(primes))

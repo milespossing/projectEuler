@@ -1,0 +1,17 @@
+argcomplete==1.12.3
+click==8.0.3
+distlib==0.3.4
+filelock==3.4.2
+greenlet==1.1.2
+mpmath==1.2.1
+msgpack==1.0.3
+numpy==1.22.1
+packaging==21.3
+pipx==0.17.0
+platformdirs==2.4.1
+pynvim==0.4.3
+pyparsing==3.0.6
+six==1.16.0
+sympy==1.9
+userpath==1.7.0
+virtualenv==20.13.0

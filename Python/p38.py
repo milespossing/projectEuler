@@ -15,19 +15,23 @@ def makeNumber(num):
             return [n,-1]
     return [n,output]
 
-i = 3
-high = 0
-current = makeNumber(i)
-while (current[1] == -1):
-    i += 2
-    current = makeNumber(i)
-
-while(current[0] > 1):
-    if panDigital(current[1]):
-        if current[1] > high: high = current[1]
-    i += 2
+def solve():
+    i = 3
+    high = 0
     current = makeNumber(i)
     while (current[1] == -1):
         i += 2
         current = makeNumber(i)
-print(high)
+
+    while(current[0] > 1):
+        if panDigital(current[1]):
+            if current[1] > high: high = current[1]
+        i += 2
+        current = makeNumber(i)
+        while (current[1] == -1):
+            i += 2
+            current = makeNumber(i)
+    return high
+
+if __name__ == '__main__':
+    print(solve())

@@ -10,7 +10,6 @@ def checkNumber(num):
     return True
 
 
-@timer
 def p206():
     number = math.floor(math.sqrt(pow(10.0102, 19)))
     check = checkNumber(number**2)
@@ -22,4 +21,3 @@ def p206():
 
 if __name__ == '__main__':
     p206()
-    print("Done")

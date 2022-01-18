@@ -13,9 +13,9 @@ module NumberOperations=
         let l = int(floor(Math.Log10(float(n))))
         ConvertToDigitArrayRec(n,l)
       
-    let IntIsPalendrome(n:int64):bool=
-        let l = ConvertToDigitArray(n)
-        let a1 = l.[0..(l.Length / 2) - 1]
-        let a2 = l.[(l.Length/2)..] |> List.rev
+    // let IntIsPalendrome(n:int64):bool=
+    //     let l = ConvertToDigitArray(n)
+    //     let a1 = l.[0..(l.Length / 2) - 1]
+    //     let a2 = l.[(l.Length/2)..] |> List.rev
         
         

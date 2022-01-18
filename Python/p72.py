@@ -1,7 +1,7 @@
 from sympy import primerange, isprime, primefactors, sieve
 from numpy import gcd
 
-if __name__ == "__main__":
+def main():
     n = 1000000
     output = 0
     sieve.extend(1000000)
