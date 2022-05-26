@@ -11,6 +11,12 @@
             "Exe": "./venv/bin/python3",
             "Params": ["main.py"],
             "WorkDir": "../Python"
+        },
+        {
+            "Name": "Javascript",
+            "Exe": "node",
+            "Params": ["main.js"],
+            "WorkDir": "../JS"
         }
     ]
 }
